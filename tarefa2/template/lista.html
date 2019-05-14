@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>    
+    <style>
+        table, td, th {
+            border: 1px solid black;
+            color: black;
+            border-color: royalblue;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 80%;
+        }
+        
+    </style>
+</head>
+<body>
+    <td><a href="/form">Inserir</a></td>        
+    <table>
+        <tr>                    
+            <th>Código</th><th>Nome</th><th>Código de Departamento</th>            
+        </tr> 
+        {% for linha in funcionarios %}        
+            <tr>
+                <td>{{linha.id}}</td><td>{{linha.nome}}</td><td>{{linha.idDepto}}</td>
+                <td><a type="buttom" href="/deletar?id={{linha.id}}">Deletar</a></td>
+                <td><a type="buttom" href="/alterar?id={{linha.id}}">Alterar</a></td>
+            </tr>           
+        {%endfor%}
+    </table>
+         
+</body>
+</html>
